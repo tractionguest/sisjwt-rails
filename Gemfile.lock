@@ -1,5 +1,6 @@
-PATH
-  remote: ../sisjwt-ruby
+GIT
+  remote: https://github.com/tractionguest/sisjwt-ruby.git
+  revision: d3e3ea9b84d0e38f0c39b11b5e2141b8aec2836c
   specs:
     sisjwt (0.1.0)
       activemodel (~> 6.0.5)
@@ -73,7 +74,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.708.0)
+    aws-partitions (1.711.0)
     aws-sdk-core (3.170.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
@@ -209,7 +210,7 @@ DEPENDENCIES
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
-  sisjwt!
+  sisjwt (~> 0.1.0)!
   sisjwt-rails!
 
 BUNDLED WITH
