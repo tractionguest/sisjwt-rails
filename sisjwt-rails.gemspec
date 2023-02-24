@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 
-require_relative "lib/sisjwt/version"
+require_relative 'lib/sisjwt/rails/version'
 
 Gem::Specification.new do |spec|
-  spec.name = "sisjwt-rails"
-  spec.version = Sisjwt::VERSION
-  spec.authors = ["Andrew Burns"]
-  spec.email = ["andrew.burns@signinsolutions.com"]
+  spec.name = 'sisjwt-rails'
+  spec.version = Sisjwt::Rails::VERSION
+  spec.authors = ['Andrew Burns']
+  spec.email = ['andrew.burns@signinsolutions.com']
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
-  spec.summary = "Ruby on Rails specific features of Sign In Solutions JWT Standard"
+  spec.summary = 'Ruby on Rails specific features of Sign In Solutions JWT Standard'
   # spec.description = "TODO: Write a longer description or delete this line."
   # spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = '>= 2.6.0'
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
@@ -26,12 +27,9 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|circleci)|appveyor)})
     end
   end
-  spec.bindir = "exe"
+  spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
   spec.add_dependency 'rails', '~> 6.0.5'
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
 end

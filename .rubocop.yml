@@ -1,13 +1,22 @@
+################################################################################
+# RuboCop setup
+################################################################################
+require:
+  - rubocop-rspec
+
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.6
 
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
 
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
+################################################################################
+# Individual cop configurations
+################################################################################
 Layout/LineLength:
   Max: 120
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 20
