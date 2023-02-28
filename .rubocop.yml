@@ -20,3 +20,9 @@ RSpec/MultipleExpectations:
 
 RSpec/MultipleMemoizedHelpers:
   Max: 20
+
+# These 3 rules require a trailing comma, if and only if every item is on its
+# own line.
+Style/TrailingCommaInArguments:    { EnforcedStyleForMultiline: comma }
+Style/TrailingCommaInArrayLiteral: { EnforcedStyleForMultiline: comma }
+Style/TrailingCommaInHashLiteral:  { EnforcedStyleForMultiline: comma }
