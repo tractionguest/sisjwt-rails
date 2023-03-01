@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: 142bf2654fc8a41461b5a73e91f6fc3352faef0b
+  revision: a046ae15cbcc2d9d417f863cbd84bff2aa5c0f9f
   specs:
     sisjwt (0.2.0)
       activemodel (~> 6.0.5)
