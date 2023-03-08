@@ -46,6 +46,18 @@ module Sisjwt
           raise
         end
 
+        def sisjwt_create_token(payload)
+          signing_options = ::Sisjwt::SisJwtOptions.defaults(mode: :sign).tap do |opts|
+            # We are signing a return request so iss/aud is flipped from how it
+            # is specififed in the controller
+            opts.iss = @@allowed_aud
+            opts.aud = @@allowed_iss
+          end
+
+          sisjwt = ::Sisjwt::SisJwt.new(signing_options, logger: logger)
+          sisjwt.encode(payload)
+        end
+
         protected
 
         def sisjwt_authenticator
