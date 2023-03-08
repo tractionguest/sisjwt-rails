@@ -29,7 +29,7 @@ module Sisjwt
       extend ActiveSupport::Concern
 
       included do
-        before_action :authenticate_sisjwt
+        prepend_before_action :authenticate_sisjwt
 
         # Authenticates the current HTTP request via the SISJWT in its
         # +Authorization+ header.
