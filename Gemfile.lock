@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: 02b033150174f45d3465c06253a2e76430671568
+  revision: 7bd0b8317337445c7681cfb5e339a47f8228a059
   specs:
-    sisjwt (0.2.2)
+    sisjwt (0.2.3)
       activemodel (~> 6.0.5)
       activesupport (~> 6.0.5)
       aws-sdk-kms (~> 1)
@@ -12,7 +12,7 @@ GIT
 PATH
   remote: .
   specs:
-    sisjwt-rails (0.2.0)
+    sisjwt-rails (0.2.1)
       rails (~> 6.0.5)
 
 GEM
@@ -75,7 +75,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.721.0)
+    aws-partitions (1.722.0)
     aws-sdk-core (3.170.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
@@ -135,7 +135,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.17.0)
+    minitest (5.18.0)
     nenv (0.3.0)
     net-imap (0.3.4)
       date
@@ -266,4 +266,4 @@ DEPENDENCIES
   sisjwt-rails!
 
 BUNDLED WITH
-   2.4.6
+   2.4.4
