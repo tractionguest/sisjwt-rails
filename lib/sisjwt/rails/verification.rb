@@ -61,8 +61,9 @@ module Sisjwt
         protected
 
         def sisjwt_authenticator
-          @sisjwt_authenticator ||= Authenticator.new(sisjwt_config[:allowed_aud],
-                                                      sisjwt_config[:allowed_iss])
+          cfg = self.class.sisjwt_config
+          @sisjwt_authenticator ||= Authenticator.new(cfg[:allowed_aud],
+                                                      cfg[:allowed_iss])
         end
 
         def sisjwt_options
