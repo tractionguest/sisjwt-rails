@@ -28,8 +28,8 @@ module Sisjwt
     module Verification
       extend ActiveSupport::Concern
 
-      included do
-        prepend_before_action :authenticate_sisjwt
+      included do # rubocop:disable Metrics/BlockLength
+        prepend_before_action :authenticate_sisjwt, if: :authenticate_sisjwt?
 
         # Authenticates the current HTTP request via the SISJWT in its
         # +Authorization+ header.
@@ -68,6 +68,12 @@ module Sisjwt
 
         def sisjwt_options
           sisjwt_authenticator.options
+        end
+
+        # A hook method that can be overriden by implementors to selectivly disable
+        # SISJWT authentication.
+        def authenticate_sisjwt?
+          true
         end
 
         private
