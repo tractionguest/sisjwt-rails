@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 # Private runtime dependencies
+gem 'nokogiri', '~> 1.13', force_ruby_platform: true
 gem 'sisjwt', '~> 0.2',
   github: 'tractionguest/sisjwt-ruby'
 
