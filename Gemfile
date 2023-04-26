@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 # Private runtime dependencies
+gem 'nokogiri', '~> 1.13', force_ruby_platform: true
 gem 'sisjwt', '= 0.3.0-alpha1',
     github: 'tractionguest/sisjwt-ruby', branch: 'feature-kube-headers-case'
 

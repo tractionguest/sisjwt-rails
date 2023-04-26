@@ -28,8 +28,8 @@ module Sisjwt
     module Verification
       extend ActiveSupport::Concern
 
-      included do
-        before_action :authenticate_sisjwt
+      included do # rubocop:disable Metrics/BlockLength
+        prepend_before_action :authenticate_sisjwt, if: :authenticate_sisjwt?
 
         # Authenticates the current HTTP request via the SISJWT in its
         # +Authorization+ header.
@@ -46,15 +46,34 @@ module Sisjwt
           raise
         end
 
+        def sisjwt_create_token(payload)
+          signing_options = ::Sisjwt::SisJwtOptions.defaults(mode: :sign).tap do |opts|
+            # We are signing a return request so iss/aud is flipped from how it
+            # is specififed in the controller
+            opts.iss = @@allowed_aud
+            opts.aud = @@allowed_iss
+          end
+
+          sisjwt = ::Sisjwt::SisJwt.new(signing_options, logger: logger)
+          sisjwt.encode(payload)
+        end
+
         protected
 
         def sisjwt_authenticator
-          @sisjwt_authenticator ||= Authenticator.new(sisjwt_config[:allowed_aud],
-                                                      sisjwt_config[:allowed_iss])
+          cfg = self.class.sisjwt_config
+          @sisjwt_authenticator ||= Authenticator.new(cfg[:allowed_aud],
+                                                      cfg[:allowed_iss])
         end
 
         def sisjwt_options
           sisjwt_authenticator.options
+        end
+
+        # A hook method that can be overriden by implementors to selectivly disable
+        # SISJWT authentication.
+        def authenticate_sisjwt?
+          true
         end
 
         private
