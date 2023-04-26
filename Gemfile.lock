@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: 02b033150174f45d3465c06253a2e76430671568
+  revision: d89e1f38586b7ea2f7fb97e07e32c5579fbd08e6
+  branch: feature-kube-headers-case
   specs:
     sisjwt (0.2.2)
       activemodel (~> 6.0.5)
@@ -262,7 +263,7 @@ DEPENDENCIES
   rspec (~> 3.0)
   rubocop (~> 1.21)
   rubocop-rspec (~> 2.18)
-  sisjwt (~> 0.2)!
+  sisjwt (= 0.3.0-alpha1)!
   sisjwt-rails!
 
 BUNDLED WITH

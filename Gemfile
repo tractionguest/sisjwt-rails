@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gemspec
 
 # Private runtime dependencies
-gem 'sisjwt', '~> 0.2', github: 'tractionguest/sisjwt-ruby'
+gem 'sisjwt', '= 0.3.0-alpha1',
+    github: 'tractionguest/sisjwt-ruby', branch: 'feature-kube-headers-case'
 
 # Development dependencies
 gem 'guard-rspec', '~> 4.7.3'
