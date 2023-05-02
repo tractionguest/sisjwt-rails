@@ -29,24 +29,23 @@ RSpec.describe Sisjwt::Rails::Authenticator do
       end
     end
 
-    # TODO: debugging
-    # context 'with an invalid token, signed with the wrong aud' do
-    #   let(:signing_aud) { 'something else' }
-    #   let(:signing_iss) { allowed_iss }
+    context 'with an invalid token, signed with the wrong aud' do
+      let(:signing_aud) { 'something else' }
+      let(:signing_iss) { allowed_iss }
 
-    #   it 'does not yield any errors' do
-    #     expect(&result).to yield_with_args include(errors: ['Aud not on the approved list'])
-    #   end
-    # end
+      it 'does not yield any errors' do
+        expect(&result).to yield_with_args include(errors: ['Aud "something else" is not in the approved list'])
+      end
+    end
 
-    # context 'with an invalid token, signed with the wrong iss' do
-    #   let(:signing_aud) { allowed_aud }
-    #   let(:signing_iss) { 'something else' }
+    context 'with an invalid token, signed with the wrong iss' do
+      let(:signing_aud) { allowed_aud }
+      let(:signing_iss) { 'something else' }
 
-    #   it 'does not yield any errors' do
-    #     expect(&result).to yield_with_args include(errors: ['Iss not on the approved list'])
-    #   end
-    # end
+      it 'does not yield any errors' do
+        expect(&result).to yield_with_args include(errors: ['Iss "something else" is not in the approved list'])
+      end
+    end
   end
 
   describe '#verify' do
