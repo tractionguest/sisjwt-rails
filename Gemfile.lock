@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: d89e1f38586b7ea2f7fb97e07e32c5579fbd08e6
+  revision: f7aacb68e3abc8d503453b33580005911b6eab00
   branch: feature-kube-headers-case
   specs:
     sisjwt (0.2.4)
