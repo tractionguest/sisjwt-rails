@@ -4,9 +4,8 @@ source 'https://rubygems.org'
 gemspec
 
 # Private runtime dependencies
-gem 'nokogiri', '~> 1.13', force_ruby_platform: true
-gem 'sisjwt', '~> 0.2.4',
-    github: 'tractionguest/sisjwt-ruby'
+gem 'nokogiri', '~> 1.13', platform: :ruby
+gem 'sisjwt', '~> 0.3', github: 'tractionguest/sisjwt-ruby'
 
 # Development dependencies
 gem 'guard-rspec', '~> 4.7.3'
