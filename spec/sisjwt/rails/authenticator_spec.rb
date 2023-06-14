@@ -34,7 +34,8 @@ RSpec.describe Sisjwt::Rails::Authenticator do
       let(:signing_iss) { allowed_iss }
 
       it 'does not yield any errors' do
-        expect(&result).to yield_with_args include(errors: ['Aud not on the approved list'])
+        expect(&result).to yield_with_args
+        expect(result.call({}).errors[:aud]).to include "\"#{signing_aud}\" is not in the approved list"
       end
     end
 
@@ -43,7 +44,8 @@ RSpec.describe Sisjwt::Rails::Authenticator do
       let(:signing_iss) { 'something else' }
 
       it 'does not yield any errors' do
-        expect(&result).to yield_with_args include(errors: ['Iss not on the approved list'])
+        expect(&result).to yield_with_args
+        expect(result.call({}).errors[:iss]).to include "\"#{signing_iss}\" is not in the approved list"
       end
     end
   end
