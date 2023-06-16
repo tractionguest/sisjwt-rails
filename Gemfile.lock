@@ -264,14 +264,14 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  guard-rspec (~> 4.7.3)
-  guard-rubocop (~> 1.5)
+  guard-rspec
+  guard-rubocop
   nokogiri (~> 1.13)
-  pry-byebug (~> 3.10)
-  rake (~> 13.0)
-  rspec (~> 3.0)
-  rubocop (~> 1.21)
-  rubocop-rspec (~> 2.18)
+  pry-byebug
+  rake
+  rspec
+  rubocop
+  rubocop-rspec
   sisjwt!
   sisjwt-rails!
 
