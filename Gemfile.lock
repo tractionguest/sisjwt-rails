@@ -1,14 +1,14 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: 49b6f146ac368d179783582e747ed2948e972667
+  revision: 53def831c20c5edf31a561241e117430a475a9df
   branch: feature-kube-rails-7-upgrade
   specs:
     sisjwt (0.4.0)
       activemodel (~> 7.0.5)
       activesupport (~> 7.0.5)
       aws-sdk-kms (~> 1)
-      jwt (~> 2.6.0)
-      zeitwerk (~> 2.6)
+      jwt
+      zeitwerk
 
 PATH
   remote: .
@@ -130,7 +130,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jmespath (1.6.2)
     json (2.6.3)
-    jwt (2.6.0)
+    jwt (2.7.1)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
