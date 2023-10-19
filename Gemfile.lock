@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: f01e3e0481d4d99266db0c036aa8c3c491d5355e
+  revision: 1ba326c8c5356cbb8ac159973ffbee1f4ad741a7
   specs:
-    sisjwt (0.3.1)
+    sisjwt (0.3.2)
       activemodel (~> 6.1.7, >= 6.1.7.3)
       activesupport (~> 6.1.7, >= 6.1.7.3)
       aws-sdk-kms (~> 1)
@@ -12,7 +12,7 @@ GIT
 PATH
   remote: .
   specs:
-    sisjwt-rails (0.3.1)
+    sisjwt-rails (0.3.2)
       rails (~> 6.1.7, >= 6.1.7.3)
 
 GEM
