@@ -5,7 +5,7 @@ gemspec
 
 # Private runtime dependencies
 gem 'nokogiri', '~> 1.13', platform: :ruby
-gem 'sisjwt', '~> 0.3', github: 'tractionguest/sisjwt-ruby'
+gem 'sisjwt', '~> 0.3', github: 'tractionguest/sisjwt-ruby', branch: 'feature-kube-core-1151-rails-upgrade'
 
 # Development dependencies
 gem 'guard-rspec', '~> 4.7.3'
