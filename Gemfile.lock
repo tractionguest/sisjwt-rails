@@ -1,19 +1,20 @@
 GIT
   remote: https://github.com/tractionguest/sisjwt-ruby.git
-  revision: 1ba326c8c5356cbb8ac159973ffbee1f4ad741a7
+  revision: 9b2d701d12a3b6bdb71b2ad1252d8dc80517f6f8
+  branch: ruby-3.4.8-support
   specs:
-    sisjwt (0.3.2)
-      activemodel (~> 6.1.7, >= 6.1.7.3)
-      activesupport (~> 6.1.7, >= 6.1.7.3)
+    sisjwt (0.4.2)
+      activemodel (>= 6.1.7.3, < 9.0)
+      activesupport (>= 6.1.7.3, < 9.0)
       aws-sdk-kms (~> 1)
-      jwt (~> 2.6.0)
+      jwt (>= 2.6, < 4.0)
       zeitwerk (~> 2.6)
 
 PATH
   remote: .
   specs:
-    sisjwt-rails (0.3.2)
-      rails (~> 6.1.7, >= 6.1.7.3)
+    sisjwt-rails (0.4.1)
+      rails (>= 6.1.7.3, < 8.0)
 
 GEM
   remote: https://rubygems.org/
@@ -78,25 +79,34 @@ GEM
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
     ast (2.4.2)
-    aws-eventstream (1.2.0)
-    aws-partitions (1.779.0)
-    aws-sdk-core (3.174.0)
-      aws-eventstream (~> 1, >= 1.0.2)
-      aws-partitions (~> 1, >= 1.651.0)
-      aws-sigv4 (~> 1.5)
+    aws-eventstream (1.4.0)
+    aws-partitions (1.1213.0)
+    aws-sdk-core (3.242.0)
+      aws-eventstream (~> 1, >= 1.3.0)
+      aws-partitions (~> 1, >= 1.992.0)
+      aws-sigv4 (~> 1.9)
+      base64
+      bigdecimal
       jmespath (~> 1, >= 1.6.1)
-    aws-sdk-kms (1.66.0)
-      aws-sdk-core (~> 3, >= 3.174.0)
-      aws-sigv4 (~> 1.1)
-    aws-sigv4 (1.5.2)
+      logger
+    aws-sdk-kms (1.121.0)
+      aws-sdk-core (~> 3, >= 3.241.4)
+      aws-sigv4 (~> 1.5)
+    aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
+    base64 (0.3.0)
+    bigdecimal (4.0.1)
     builder (3.2.4)
-    byebug (11.1.3)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
+    debug (1.11.1)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     diff-lcs (1.5.0)
+    drb (2.2.3)
+    erb (6.0.1)
     erubi (1.12.0)
     ffi (1.15.5)
     formatador (1.1.0)
@@ -121,12 +131,20 @@ GEM
       rubocop (< 2.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    io-console (0.8.2)
+    irb (1.17.0)
+      pp (>= 0.6.0)
+      prism (>= 1.3.0)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
     jmespath (1.6.2)
     json (2.6.3)
-    jwt (2.6.0)
+    jwt (3.1.2)
+      base64
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -139,7 +157,9 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.9)
     minitest (5.18.0)
+    mutex_m (0.3.0)
     nenv (0.3.0)
     net-imap (0.3.6)
       date
@@ -151,9 +171,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.2-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.15.2-x86_64-linux)
+    nokogiri (1.15.2)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
@@ -162,12 +181,16 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
+    pp (0.6.3)
+      prettyprint
+    prettyprint (0.2.0)
+    prism (1.9.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.10.1)
-      byebug (~> 11.0)
-      pry (>= 0.13, < 0.15)
+    psych (5.3.1)
+      date
+      stringio
     racc (1.7.1)
     rack (2.2.7)
     rack-test (2.1.0)
@@ -204,7 +227,13 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rdoc (7.2.0)
+      erb
+      psych (>= 4.0.0)
+      tsort
     regexp_parser (2.8.1)
+    reline (0.6.3)
+      io-console (~> 0.5)
     rexml (3.2.5)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
@@ -248,8 +277,10 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stringio (3.2.0)
     thor (1.2.2)
     timeout (0.3.2)
+    tsort (0.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
@@ -261,18 +292,22 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
+  bigdecimal
+  debug (~> 1.9)
+  drb
   guard-rspec (~> 4.7.3)
   guard-rubocop (~> 1.5)
+  mutex_m
   nokogiri (~> 1.13)
-  pry-byebug (~> 3.10)
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
   rubocop-rspec (~> 2.18)
-  sisjwt (~> 0.3)!
+  sisjwt (= 0.4.2)!
   sisjwt-rails!
 
 BUNDLED WITH
