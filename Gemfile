@@ -5,7 +5,7 @@ gemspec
 
 # Private runtime dependencies
 gem 'nokogiri', '~> 1.13', platform: :ruby
-gem 'sisjwt', '0.4.2', github: 'tractionguest/sisjwt-ruby', branch: 'ruby-3.4.8-support'
+gem 'sisjwt', '0.4.2', github: 'tractionguest/sisjwt-ruby'
 
 # Ruby 3.4 extracted gems (required by Rails 6.1)
 gem 'mutex_m'
